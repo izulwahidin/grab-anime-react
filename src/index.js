@@ -2,7 +2,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ReactDOM from 'react-dom/client';
-import './assets/index.css';
+import './assets/index.css'
 
 import Page from './pages/Page/Page';
 import Post from './pages/Post/Post';
