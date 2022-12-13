@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Card from "../../components/Card";
 import Pagination from "../../components/Pagination";
+import Loader from "../../components/Loader";
 
 const Page = () => {
     const [data, setData] = useState(null);
@@ -50,40 +51,34 @@ const Page = () => {
 
     return (
         <>
-            <div className="card-wrapper">
-                {
-                    loading? (
-                        <>
-                            Lagi Loading...
-                        </>
+            {
+                loading? (
+                    <>
+                        <Loader/>
+                    </>
+                ):(
+                    error?(
+                        console.log('Error bang',error)
                     ):(
-                        error?(
-                            console.log('Error card bang',error)
-                        ):(
-                            data.latest.map(content => {
-                                return <Card content={content}/>
-                            })
-                        )
-                    )
-                }
-            </div>
-            <div className="pagination-wrapper">
-                {
-                    loading? (
                         <>
-                            {/* Lagi Loading... */}
+                            <div className="card-wrapper">
+                                {
+                                    data.latest.map(content => {
+                                        return <Card content={content}/>
+                                    })
+                                }
+                            </div>
+                            <div className="pagination-wrapper">
+                                {
+                                    data.pagination.map(data => {
+                                        return <Pagination data={[data,path]}/>
+                                    })
+                                }
+                            </div>
                         </>
-                    ):(
-                        error?(
-                            console.log('Error pagination bang',error)
-                        ):(
-                            data.pagination.map(data => {
-                                return <Pagination data={[data,path]}/>
-                            })
-                        )
                     )
-                }
-            </div>
+                )
+            }
         </>
     )
 };
