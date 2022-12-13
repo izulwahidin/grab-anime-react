@@ -55,7 +55,7 @@ const Post = () => {
                         {
                             loading? (
                                 <>
-                                    Lagi Loading...
+                                    {/* Lagi Loading... */}
                                 </>
                             ):(
                                 error?(
