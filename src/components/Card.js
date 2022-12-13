@@ -7,7 +7,7 @@ const Card = (content) => {
             <div className="card">
                 <a href={url}>
                         <img src={content.content.img ? content.content.img : content.content.img_secondary} alt={content.content.ttl}/>
-                        <p className="card-title">{content.content.ttl} Episode {content.content.ep}</p>
+                        <p className="card-title">{content.content.ttl ? content.content.ttl : content.content.type} Episode {content.content.ep}</p>
                         <p className="card-time">{content.content.t}</p>
                 </a>
             </div>
