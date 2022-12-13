@@ -1,4 +1,5 @@
 import React from 'react';
+
 const Pagination = (data) => {
     const path = data.data[1];
     const pg = path + data.data[0].page;

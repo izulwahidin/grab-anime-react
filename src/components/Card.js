@@ -1,3 +1,5 @@
+import React from 'react';
+
 const Card = (content) => {
     const url = content.content.url.replace('/grab/gogo/videos/','/watch/');
     return (
