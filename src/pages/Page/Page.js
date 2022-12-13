@@ -47,7 +47,7 @@ const Page = () => {
          .then((err) => {
             setError(err);
          })
-    }, []); // eslint-disable-line react-hooks/exhaustive-deps
+    }, []);
 
     return (
         <>

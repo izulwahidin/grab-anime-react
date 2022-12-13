@@ -21,7 +21,7 @@ const Post = () => {
          .then((err) => {
             setError(err);
          })
-    }, []); // eslint-disable-line react-hooks/exhaustive-deps
+    }, []);
 
     
     return (
