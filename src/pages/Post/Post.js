@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { ShimmerFeaturedGallery } from "shimmer-react";
 import Card from "../../components/Card";
 import Video from "../../components/Video";
 
@@ -31,7 +30,7 @@ const Post = () => {
                     {
                         loading? (
                             <>
-                                <ShimmerFeaturedGallery card col={3}/>
+                                Lagi Loading...
                             </>
                         ):(
                             error?(
@@ -56,7 +55,7 @@ const Post = () => {
                         {
                             loading? (
                                 <>
-                                    {/* <ShimmerFeaturedGallery card col={3}/> */}
+                                    Lagi Loading...
                                 </>
                             ):(
                                 error?(
@@ -80,7 +79,7 @@ const Post = () => {
                         {
                             loading? (
                                 <>
-                                    <ShimmerFeaturedGallery card col={3}/>
+                                    Lagi Loading...
                                 </>
                             ):(
                                 error?(

@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { ShimmerFeaturedGallery } from "shimmer-react";
 import Card from "../../components/Card";
 import Pagination from "../../components/Pagination";
 
@@ -55,7 +54,7 @@ const Page = () => {
                 {
                     loading? (
                         <>
-                            <ShimmerFeaturedGallery card/>
+                            Lagi Loading...
                         </>
                     ):(
                         error?(
@@ -72,7 +71,7 @@ const Page = () => {
                 {
                     loading? (
                         <>
-                            {/* <ShimmerFeaturedGallery card/> */}
+                            {/* Lagi Loading... */}
                         </>
                     ):(
                         error?(
