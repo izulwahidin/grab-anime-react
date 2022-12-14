@@ -2,11 +2,12 @@ import React, { useState, useEffect } from "react";
 import Card from "../../components/Card";
 import Pagination from "../../components/Pagination";
 import Loader from "../../components/Loader";
+import NoPage from "../../pages/NoPage"
 
 const Page = () => {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+    const [error, setError] = useState(false);
 
     const path = window.location.pathname;
     const query = window.location.search;
@@ -41,12 +42,16 @@ const Page = () => {
         fetch(`https://whd.pp.ua/grab/gogo${endpoint+query}`)
         .then((json) => json.json())
         .then(res => {
+            if(!res.latest){
+                throw new Error("404");
+            }
             setData(res)
             setLoading(!loading)
         })
-         .then((err) => {
-            setError(err);
-         })
+        .catch(function() {
+            setError(!error)
+            setLoading(!loading)
+        });
     }, []);
 
     return (
@@ -58,7 +63,7 @@ const Page = () => {
                     </>
                 ):(
                     error?(
-                        console.log('Error bang',error)
+                        <NoPage/>
                     ):(
                         <>
                             <div className="card-wrapper">

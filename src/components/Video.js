@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Video = (e) => {
-    // console.log(e);
     return (
         <>
             <div className="video-wrapper">
